@@ -12,10 +12,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Upload Episode from YouTube To Anchor.Fm
-        uses: Schrodinger-Hat/youtube-to-anchorfm@v2.0.0
+        uses: Schrodinger-Hat/youtube-to-anchorfm@V2.0.0
         env:
           ANCHOR_EMAIL: ${{ secrets.ANCHOR_EMAIL }}
           ANCHOR_PASSWORD: ${{ secrets.ANCHOR_PASSWORD }}
           EPISODE_PATH: /github/workspace
-          LOAD_THUMBNAIL: true
-          URL_IN_DESCRIPTION: true
+          # LOAD_THUMBNAIL: true
+          # URL_IN_DESCRIPTION: true
