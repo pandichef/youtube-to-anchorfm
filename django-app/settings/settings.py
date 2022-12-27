@@ -121,7 +121,7 @@ STATIC_URL = '/static/'
 
 # default static files settings for PythonAnywhere.
 # see https://help.pythonanywhere.com/pages/DjangoStaticFiles for more info
-MEDIA_ROOT = '/home/pandichef/django-app/settings/media'
+MEDIA_ROOT = '/home/pandichef/youtube-to-anchorfm/django-app/settings/media'
 MEDIA_URL = '/media/'
-STATIC_ROOT = '/home/pandichef/django-app/settings/static'
+STATIC_ROOT = '/home/pandichef/youtube-to-anchorfm/django-app/settings/static'
 STATIC_URL = '/static/'
