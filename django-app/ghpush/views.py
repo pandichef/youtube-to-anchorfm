@@ -1,6 +1,7 @@
 import os
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.utils.datastructures import MultiValueDictKeyError
 
 
 def save_id_to_episode_json(youtube_id):
@@ -16,7 +17,11 @@ def push_new_episode_json_to_github(youtube_id):
 
 
 def index(request):
-    youtube_id = request.GET['id']
+    try:
+        youtube_id = request.GET['id']
+    except MultiValueDictKeyError:
+        return HttpResponse(
+            'Error.  You must pass a YouTube video ID as GET key "id".')
     save_id_to_episode_json(youtube_id)
     push_new_episode_json_to_github(youtube_id)
     return HttpResponse(
