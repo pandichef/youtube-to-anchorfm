@@ -11,3 +11,4 @@ django-app/media
 __pycache__/
 *.py[cod]
 *$py.class
+db.sqlite3
