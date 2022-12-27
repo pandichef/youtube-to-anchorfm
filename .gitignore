@@ -4,3 +4,5 @@ node_modules
 *.webm
 dist/episode*
 .env
+*.mp3
+*.jpg
