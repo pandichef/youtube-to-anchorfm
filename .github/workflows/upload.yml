@@ -17,5 +17,6 @@ jobs:
           ANCHOR_EMAIL: ${{ secrets.ANCHOR_EMAIL }}
           ANCHOR_PASSWORD: ${{ secrets.ANCHOR_PASSWORD }}
           EPISODE_PATH: /github/workspace
+          # The env variable below is causing an error on GH Actions
           URL_IN_DESCRIPTION: true
-          # LOAD_THUMBNAIL: true
+          LOAD_THUMBNAIL: true
