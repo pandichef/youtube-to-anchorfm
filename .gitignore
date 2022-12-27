@@ -6,3 +6,5 @@ dist/episode*
 .env
 *.mp3
 *.jpg
+django-app/
+
