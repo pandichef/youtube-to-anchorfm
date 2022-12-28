@@ -20,7 +20,11 @@ chrome.browserAction.onClicked.addListener(async () => {
         // let response = await fetch('https://jsonplaceholder.typicode.com/users', { method: 'GET' }); // For testing
         let response = await fetch(fetchHostName + '?id=' + videoId, { method: 'GET' });
         let responseText = await response.text();
-        alert(responseText);
+        if (responseText.includes('Django admin')) {
+          alert('You must first authenticate to use this extension');
+        } else {
+          alert(responseText);
+        }
       } else {
         alert('This extension only works with YouTube.');
       }
