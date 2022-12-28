@@ -126,5 +126,5 @@ MEDIA_URL = '/media/'
 STATIC_ROOT = '/home/pandichef/youtube-to-anchorfm/django-app/static'
 STATIC_URL = '/static/'
 
-os.chdir('..')
-print(f"CWD: {os.getcwd()}")
+# os.chdir('..')
+# print(f"CWD: {os.getcwd()}")

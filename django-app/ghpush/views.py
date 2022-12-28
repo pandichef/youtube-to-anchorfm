@@ -11,9 +11,14 @@ def save_id_to_episode_json(youtube_id):
 
 
 def push_new_episode_json_to_github(youtube_id):
+    # Note: git commands can be run from Django subdirectory
+    # They don't need to run from git top level directory
+    # django_directory = os.getcwd()
+    # os.chdir('..')  # github repo is here
     os.system('git add episode.json')
     os.system(f'git commit -m "Push {youtube_id} to Anchor"')
     os.system('git push origin main')
+    # os.chdir(django_directory)
 
 
 def index(request):
