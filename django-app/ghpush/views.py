@@ -2,6 +2,7 @@ import os
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.utils.datastructures import MultiValueDictKeyError
+from django.contrib.auth.decorators import login_required
 
 
 def save_id_to_episode_json(youtube_id):
@@ -21,6 +22,7 @@ def push_new_episode_json_to_github(youtube_id):
     # os.chdir(django_directory)
 
 
+@login_required(login_url='/admin/login/')
 def index(request):
     try:
         youtube_id = request.GET['id']
