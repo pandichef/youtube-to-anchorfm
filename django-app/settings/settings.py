@@ -24,7 +24,7 @@ if SECRET_KEY == '':
     assert 0 == 1, "Secret key cannot be empty"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['youtube-to-snipd.pandibay.com', '127.0.0.1']
 
