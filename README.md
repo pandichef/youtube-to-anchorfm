@@ -1,3 +1,7 @@
+# Fork Notes
+
+I added django-app and chrome-extension
+
 # YouTube to Anchor.fm - An automation tool to publish your podcast
 
 ![Cover image](https://raw.githubusercontent.com/Schrodinger-Hat/youtube-to-anchorfm/main/assets/img/cover.png 'Cover image')
@@ -10,24 +14,22 @@ In our live show ([Schrodinger Hat](https://open.spotify.com/show/7yfkQCV6hrPIqf
 
 Every contribution is appreciated, even just a simple feedback.
 
-Table of Contents
-=================
+# Table of Contents
 
-* [YouTube to Anchor.fm - An automation tool to publish your podcast](#youtube-to-anchorfm---an-automation-tool-to-publish-your-podcast)
-   * [How it works](#how-it-works)
-   * [How can I run this as a GitHub action?](#how-can-i-run-this-as-a-github-action)
-   * [Environment variables](#environment-variables)
-      * [Draft Mode](#draft-mode)
-      * [Audio conversion options](#audio-conversion-options)
-      * [Explicit Mode](#explicit-mode)
-      * [Thumbnail Mode](#thumbnail-mode)
-      * [Add YouTube URL to Podcast Description](#add-youtube-url-to-podcast-description)
-      * [Set a publish date for the episode](#set-a-publish-date-for-the-episode)
-   * [How can I setup for development and use the script locally?](#how-can-i-setup-for-development-and-use-the-script-locally)
-   * [How to upload a YouTube playlist to Anchor.fm using this script?](#how-to-upload-a-youtube-playlist-to-anchorfm-using-this-script)
-* [Contributors](#contributors)
-* [License](#license)
-
+- [YouTube to Anchor.fm - An automation tool to publish your podcast](#youtube-to-anchorfm---an-automation-tool-to-publish-your-podcast)
+  - [How it works](#how-it-works)
+  - [How can I run this as a GitHub action?](#how-can-i-run-this-as-a-github-action)
+  - [Environment variables](#environment-variables)
+    - [Draft Mode](#draft-mode)
+    - [Audio conversion options](#audio-conversion-options)
+    - [Explicit Mode](#explicit-mode)
+    - [Thumbnail Mode](#thumbnail-mode)
+    - [Add YouTube URL to Podcast Description](#add-youtube-url-to-podcast-description)
+    - [Set a publish date for the episode](#set-a-publish-date-for-the-episode)
+  - [How can I setup for development and use the script locally?](#how-can-i-setup-for-development-and-use-the-script-locally)
+  - [How to upload a YouTube playlist to Anchor.fm using this script?](#how-to-upload-a-youtube-playlist-to-anchorfm-using-this-script)
+- [Contributors](#contributors)
+- [License](#license)
 
 ## How it works
 
@@ -74,7 +76,6 @@ jobs:
 ```
 
 **NOTE**: you need to [set up the secrets](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository) for _ANCHOR_EMAIL_ and _ANCHOR_PASSWORD_. This environment variables are mandatory as they specify the sign in account.
-
 
 ## Environment variables
 
