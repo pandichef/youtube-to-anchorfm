@@ -13,3 +13,5 @@ __pycache__/
 *$py.class
 db.sqlite3
 *.zip
+*Zone.Identifier
+
