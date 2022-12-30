@@ -17,7 +17,7 @@ chrome.browserAction.onClicked.addListener(async () => {
       let responseText = await response.text();
       if (responseText.includes('Done')) {
         let filename = currentTabUrlString.split('/').slice(-1)[0];
-        let dirname = filename.split('.')[0];
+        let dirname = filename.split('.')[0].split('+').join('_');
         // alert(dirname);
         await chrome.tabs.create({
           url: fetchHostName + '/static/pdf_to_html/' + dirname + '/index.html',
