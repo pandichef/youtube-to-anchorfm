@@ -29,7 +29,7 @@ def convert_pdf_to_html(docname):
     except FileNotFoundError:
         os.mkdir('static/pdf_to_html')
         os.mkdir('static/pdf_to_html/' + docname)
-    os.system('pdftohtml -c -noframes -s ' + 'deleteme.pdf ' +
+    os.system('pdftohtml -c -noframes -s -nomerge ' + 'deleteme.pdf ' +
               'static/pdf_to_html/' + docname + '/index.html')
     # os.system('rm output/' + docname + '/deleteme.pdf')
     os.system('rm deleteme.pdf')
