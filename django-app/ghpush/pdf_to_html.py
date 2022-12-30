@@ -7,6 +7,8 @@ def download_pdf_file(url):
     assert url.endswith('.pdf'), 'URL must point to a PDF file'
     filename = url.split('/')[-1]
     docname = filename.split('.')[0]
+    print(docname)
+    docname = docname.replace(' ', '_')
 
     # os.system('rm -rf output')
     # os.mkdir('output')
@@ -19,6 +21,11 @@ def download_pdf_file(url):
     with open('deleteme.pdf', 'wb') as f:
         f.write(response.content)
 
+    print(docname)
+    print(docname)
+    print(docname)
+    print(docname)
+    print(docname)
     return docname
 
 
@@ -51,5 +58,6 @@ def convert_pdf_to_html(docname):
 if __name__ == "__main__":
     os.chdir('..')
     url = 'https://digitalassets.lib.berkeley.edu/roho/ucb/text/valentine_donald.pdf'
+    url = 'https://deleteme-z4xq4hvfe.s3.amazonaws.com/Daniel+Kahneman+-+Thinking+Fast++Slow.pdf'
     docname = download_pdf_file(url)
     convert_pdf_to_html(docname)
