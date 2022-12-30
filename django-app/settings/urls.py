@@ -20,4 +20,5 @@ from ghpush import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
+    path('to_html/', views.to_html, name='to_html'),
 ]

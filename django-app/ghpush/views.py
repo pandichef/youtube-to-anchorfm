@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.utils.datastructures import MultiValueDictKeyError
 from django.contrib.auth.decorators import login_required
+from .pdf_to_html import download_pdf_file, convert_pdf_to_html
 
 
 def save_id_to_episode_json(youtube_id):
@@ -34,3 +35,18 @@ def index(request):
     return HttpResponse(
         f"Done.  YouTube video {youtube_id} should appear on Anchor in a few minutes."
     )
+
+
+#####################################################################
+@login_required(login_url='/admin/login/')
+def to_html(request):
+    try:
+        pdf_url = request.GET['url']
+    except MultiValueDictKeyError:
+        return HttpResponse(
+            'Error.  You must pass a URL string of the PDF file as GET key "url".'
+        )
+    docname = download_pdf_file(pdf_url)
+    convert_pdf_to_html(docname)
+    return HttpResponse(
+        f"Done.  PDF file saved as html file on static file server.")
