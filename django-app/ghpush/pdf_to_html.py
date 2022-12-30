@@ -1,4 +1,5 @@
 import os
+import re
 import requests
 
 
@@ -29,15 +30,22 @@ def convert_pdf_to_html(docname):
     except FileNotFoundError:
         os.mkdir('static/pdf_to_html')
         os.mkdir('static/pdf_to_html/' + docname)
-    os.system('pdftohtml -c -noframes -s -nomerge ' + 'deleteme.pdf ' +
+    # os.system('pdftohtml -c -noframes -s -nomerge ' + 'deleteme.pdf ' +
+    # os.system('pdftohtml -noframes -s ' + 'deleteme.pdf ' +
+    os.system('pdftohtml -noframes -s ' + 'deleteme.pdf ' +
               'static/pdf_to_html/' + docname + '/index.html')
     # os.system('rm output/' + docname + '/deleteme.pdf')
     os.system('rm deleteme.pdf')
     # replace every <br/> with space in index.html
-    # with open('static/pdf_to_html/' + docname + '/index.html', 'r+t') as f:
-    #     html = f.read()
-    #     html = html.replace('<br/>', ' ')
-    #     f.write(html)
+    with open('static/pdf_to_html/' + docname + '/index.html', 'r') as f:
+        html = f.read()
+        html = html.replace('<br/>', ' ')
+        # remove timestamps like 01-00:33:49; for d. valentine berkeley interview
+        if docname == "valentine_donald":
+            html = re.sub('\d{2}-\d{2}:\d{2}:\d{2}\s', '', html)
+    os.system('rm static/pdf_to_html/' + docname + '/index.html')
+    with open('static/pdf_to_html/' + docname + '/index.html', 'w') as f:
+        f.write(html)
 
 
 if __name__ == "__main__":
