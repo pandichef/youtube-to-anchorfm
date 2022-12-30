@@ -34,10 +34,10 @@ def convert_pdf_to_html(docname):
     # os.system('rm output/' + docname + '/deleteme.pdf')
     os.system('rm deleteme.pdf')
     # replace every <br/> with space in index.html
-    with open('static/pdf_to_html/' + docname + '/index.html', 'r+t') as f:
-        html = f.read()
-        html = html.replace('<br/>', ' ')
-        f.write(html)
+    # with open('static/pdf_to_html/' + docname + '/index.html', 'r+t') as f:
+    #     html = f.read()
+    #     html = html.replace('<br/>', ' ')
+    #     f.write(html)
 
 
 if __name__ == "__main__":
