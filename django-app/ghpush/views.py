@@ -37,7 +37,7 @@ def index(request):
             'Error.  You must pass a YouTube video ID as GET key "id".')
     try:
         save_id_to_episode_json(youtube_id)
-    except AssertionError as e:
+    except Exception as e:
         return HttpResponse(e)
     push_new_episode_json_to_github(youtube_id)
     return HttpResponse(
