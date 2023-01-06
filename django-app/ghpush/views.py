@@ -8,7 +8,12 @@ from .pdf_to_html import download_pdf_file, convert_pdf_to_html
 
 def save_id_to_episode_json(youtube_id):
     string_to_write = "{" + f' "id": "{youtube_id}" ' + "}\n"
+    with open('../episode.json', 'r') as f:
+        last_string = f.read()
     with open('../episode.json', 'w') as f:
+        if last_string == string_to_write:
+            raise AssertionError(
+                'Error.  YouTube ID is the same as last time.')
         f.write(string_to_write)
 
 
