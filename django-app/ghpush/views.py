@@ -35,7 +35,10 @@ def index(request):
     except MultiValueDictKeyError:
         return HttpResponse(
             'Error.  You must pass a YouTube video ID as GET key "id".')
-    save_id_to_episode_json(youtube_id)
+    try:
+        save_id_to_episode_json(youtube_id)
+    except AssertionError as e:
+        return HttpResponse(e)
     push_new_episode_json_to_github(youtube_id)
     return HttpResponse(
         f"Done.  YouTube video {youtube_id} should appear on Anchor in a few minutes."
